@@ -1,4 +1,4 @@
-
+package DelA;
 import javafx.scene.paint.Color;
 
 /**
@@ -24,9 +24,23 @@ public class World {
         this.width = width;
         this.height = height;
 
-        shapes = new Shape[0]; // an array of references (change to non-zero size)
+        shapes = new Shape[3]; // an array of references (change to non-zero size)
         // Create the actual Shape objects (sub types)
-        // ....
+        shapes[0]=new Line(0.0, 0.0, 20.0, 40.0, Color.RED);
+        shapes[1]= new Circle(100, 100, Color.NAVAJOWHITE, 50);
+        shapes[2]= new Retangle(0, 100, Color.AQUA, 100, 50);
+
+        for (int i = 0; i < shapes.length; i++) {
+        	
+        	if (shapes[i] instanceof FillableShape) {
+        		boolean temp= !((FillableShape) shapes[i]).isFilled();
+				((FillableShape) shapes[i]).setFilled(temp);
+				
+			} 
+            shapes[i].setVelocity(100,100);
+
+		}
+      
     }
 
     /**
@@ -51,6 +65,8 @@ public class World {
         for (int i = 0; i < shapes.length; i++) { 
             shapes[i].move(elapsedTimeNs);
             shapes[i].constrain(0, 0, width, height);
+            
+            
         }
         System.out.println(width + ", " + height);
     }
@@ -64,4 +80,6 @@ public class World {
     public Shape[] getShapes() {
         return (Shape[]) shapes.clone();
     }
+   
+    
 }
