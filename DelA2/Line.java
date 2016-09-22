@@ -2,8 +2,9 @@ package DelA;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-
-
+/**
+ * An instance of Line is a line that stretches from (x,y) to (x2,y2).
+ */
 public class Line  extends Shape{
 	private double x2;
 	private double y2;
@@ -56,6 +57,7 @@ public class Line  extends Shape{
 		this.y2=y2;
 	}
 	/**
+	 * Move the line.
 	 * @param elapsedTimeNs 
 	 */
 	public void move(long elapsedTimeNs) {
@@ -76,6 +78,7 @@ public class Line  extends Shape{
 		
 	}
 	/**
+	 * Change direction of a moving line if it collides with the box's constrains.
 	 * @param boxX X-coordinate for the box's start point.
 	 * @param boxY Y-coordinate for the box's start point.
 	 * @param boxWidth The box's width.
