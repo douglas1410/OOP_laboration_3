@@ -1,3 +1,4 @@
+package DelA;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -24,13 +25,13 @@ public class Canvastest extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
-
+   
     private void drawShapes(GraphicsContext gc) {
         gc.setFill(Color.GREEN);
         gc.setStroke(Color.BLUE);
         gc.setLineWidth(5);
         gc.strokeLine(40, 10, 10, 40);
-        gc.fillOval(10, 60, 30, 30);
+        gc.fillOval(10, 30, 30, 30);
         gc.strokeOval(60, 60, 30, 30);
         gc.fillRect(110, 60, 30, 30);
         gc.strokeRect(160, 60, 30, 30);

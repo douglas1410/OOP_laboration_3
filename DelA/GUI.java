@@ -1,7 +1,6 @@
-
+package DelA;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -9,7 +8,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import static javafx.application.Application.launch;
 
 /**
  * This class holds the canvas where the components in the world are displayed.
@@ -19,7 +17,7 @@ import static javafx.application.Application.launch;
  */
 public class GUI extends Application {
 
-    private World world;
+   private World world;
 
     private Canvas canvas; // the surface whera pad and balls are drawn
     private AnimationTimer timer;
@@ -40,7 +38,7 @@ public class GUI extends Application {
             if (previousNs == 0) {
                 previousNs = nowNs;
             }
-
+            
             // the canvas might have been reshaped, e.g. by user interaction;
             // resize the world
             world.setDimensions(canvas.getWidth(), canvas.getHeight());
@@ -49,7 +47,6 @@ public class GUI extends Application {
             world.move(nowNs - previousNs); // elapsed time
             // save the new timestamp, for the next cycle
             previousNs = nowNs;
-
             GraphicsContext gc = canvas.getGraphicsContext2D();
 
             // paint the background
@@ -59,6 +56,7 @@ public class GUI extends Application {
             // paint the shapes
             for (Shape b : world.getShapes()) {
                 b.paint(gc);
+                
             }
         }
     }
@@ -95,7 +93,8 @@ public class GUI extends Application {
         launch(args);
     }
 
-    private void showAlert(String message) {
+    @SuppressWarnings("unused")
+	private void showAlert(String message) {
         alert.setHeaderText("");
         alert.setTitle("Alert!");
         alert.setContentText(message);
