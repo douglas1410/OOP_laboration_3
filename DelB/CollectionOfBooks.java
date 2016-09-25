@@ -89,7 +89,10 @@ public class CollectionOfBooks {
 		return CollectionByIsbn;
 
 	}
-        
+        /**
+         * Get all books in the list.
+         * @return Cloned list of all books.
+         */
         public ArrayList<Book> getAllBooks() {
             return (ArrayList<Book>)bookCollections.clone();
         }

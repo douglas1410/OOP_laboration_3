@@ -5,6 +5,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+/**
+ * Usier interface for CollectionOfBooks.
+ * @author Vilhelm och Douglas
+ */
 public class UserInterface {
 	private CollectionOfBooks collectionOfBooks;
 	private Scanner scan;
@@ -19,6 +24,9 @@ public class UserInterface {
                 }
 	}
 	
+        /**
+         * Print first menu and listen for the users choice.
+         */
 	public void menu(){
 		char choice=' ';
 		
@@ -57,6 +65,9 @@ public class UserInterface {
 		}
 		
 	}
+        /**
+         * Print the "Search-book-menu" and listen for the users choice.
+         */
 	public void searchBookmenu(){
 		char searchChoice=' ';
 		String answer;
@@ -82,7 +93,9 @@ public class UserInterface {
 
 		
 	}
-	
+	/**
+         *  Print the menu.
+         */
 	public void printMenu(){
 		System.out.println("----CollectionsBookMenu----");
 		System.out.println("1. Add a new book");
@@ -92,12 +105,18 @@ public class UserInterface {
 		System.out.println("0. Exit");
 		System.out.println("---------------------------");
 	}
+        /**
+         * Print the book menu.
+         */
 	public void printBookMenu(){
 		System.out.println("-----SearchBook------");
 		System.out.println("1. With Title");
 		System.out.println("2. With Author");
 		System.out.println("3. With ISBN");
 	}
+        /**
+         * Add book to collectionOfBooks.
+         */
 	public void addBook(){
 		
                 Book book;
@@ -294,7 +313,10 @@ public class UserInterface {
 			} catch(Exception e) { System.out.println(e.toString());}	
 		}
 	}
-	
+	/**
+         * Main method.
+         * @param args Not used
+         */
 	public static void main(String[] args) {
 	
 		UserInterface u = new UserInterface();
