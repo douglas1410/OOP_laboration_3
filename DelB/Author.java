@@ -9,7 +9,7 @@ public class Author implements Serializable {
 		this.name = name;
 	}
 	
-	public String getAuthor(){
+	public String getName(){
 		return name;
 	}
 	
