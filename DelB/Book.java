@@ -106,7 +106,7 @@ public class Book implements Comparable<Book>, Serializable{
 		String info="";
 		String authorsofBook="";
 		for (Author a : this.authors) {
-				authorsofBook+=a.getAuthor();
+				authorsofBook+=a.getName();
 
 		}
 		info = " "+ title +" "+ edition +" "+ isbn +" "+ price +" "+authorsofBook+"\n";
