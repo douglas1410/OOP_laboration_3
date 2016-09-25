@@ -1,4 +1,3 @@
-package DelB;
 
 
 import java.io.Serializable;
@@ -106,10 +105,10 @@ public class Book implements Comparable<Book>, Serializable{
 		String info="";
 		String authorsofBook="";
 		for (Author a : this.authors) {
-				authorsofBook+=a.getName();
+				authorsofBook+= a.getName() + ", ";
 
 		}
-		info = " "+ title +" "+ edition +" "+ isbn +" "+ price +" "+authorsofBook+"\n";
+		info = " Title: "+ title +" Edition: "+ edition +" ISBN: "+ isbn +" Price: "+ price +" Authors: "+authorsofBook+"\n";
 		return info;
 	}
 

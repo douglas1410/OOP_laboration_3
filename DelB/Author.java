@@ -1,4 +1,3 @@
-package DelB;
 
 import java.io.Serializable;
 /**
@@ -22,5 +21,6 @@ public class Author implements Serializable {
 	*/
 	public String getName(){
 		return name;
+        }
 
 }

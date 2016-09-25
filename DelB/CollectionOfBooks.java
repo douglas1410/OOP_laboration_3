@@ -1,4 +1,3 @@
-package DelB;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,15 +22,14 @@ public class CollectionOfBooks {
 	/**
 	* Remove book from the list.
 	* @param book The book to remove.
-	* @return true if book was found and removed, false if not.
+	* @return <CODE>true</CODE> if book was found and removed, <CODE>false</CODE> if not.
 	*/
 	public boolean removeBook(Book book){
 		if(bookCollections.remove(book)){
 			return true;
 		}else{
-			System.out.println("Book not found");
-		}
 		return false;
+                }
 	}
 	
 	/**
@@ -58,13 +56,13 @@ public class CollectionOfBooks {
 	* @param author Name of the author.
 	* @return List of books with given author.
 	*/
-	public ArrayList<Book> getBookByAuthor(String author){
+	public ArrayList<Book> getBooksByAuthor(String author){
 		ArrayList<Book>CollectionByAuthor = new ArrayList<Book>();
 		CollectionByAuthor.clear();
 
 		for (Book book : bookCollections) {
 			for (Author a : book.getAuthors()) {
-				if (a.getAuthor().toUpperCase().contains(author.toUpperCase())) {
+				if (a.getName().toUpperCase().contains(author.toUpperCase())) {
 					CollectionByAuthor.add(book);
 				}
 
@@ -78,7 +76,7 @@ public class CollectionOfBooks {
 	* @param isbn ISBN-number of the book.
 	* @return List of the books with the given ISBN-number.
 	*/
-	public ArrayList<Book> getBookByIsbn(String isbn){
+	public ArrayList<Book> getBooksByIsbn(String isbn){
 		ArrayList<Book>CollectionByIsbn = new ArrayList<Book>();
 		CollectionByIsbn.clear();
 
@@ -91,6 +89,20 @@ public class CollectionOfBooks {
 		return CollectionByIsbn;
 
 	}
+        
+        public ArrayList<Book> getAllBooks() {
+            return (ArrayList<Book>)bookCollections.clone();
+        }
+        
+        /**
+         * 
+         * @return <CODE>true</CODE> if the collection is empty, <CODE>false</CODE> otherwise.
+         */
+        public boolean isEmpty() {
+            return bookCollections.isEmpty();
+        }
+        
+        
 	@Override
 	public String toString(){
 		String info = bookCollections.toString();
