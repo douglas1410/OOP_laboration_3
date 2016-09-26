@@ -89,7 +89,9 @@ public class Line  extends Shape{
         	double boxX, double boxY, 
        		double boxWidth, double boxHeight) {
         // If the line object outside the box - calculate new dx and dy
-		if (getX() < boxX || x2<boxX) {} else if (getX() > boxWidth || x2>boxWidth) {
+		if (getX() < boxX || x2<boxX) {
+			setVelocity(Math.abs(getDx()), getDy());
+		} else if (getX() > boxWidth || x2>boxWidth) {
         		setVelocity(-Math.abs(getDx()), getDy());
 		}
         	if (getY() < boxY|| y2 <boxY) {
